@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Eleições 2024 - Gestão de Políticos
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let politico of politicos">
+      <ion-label>
+        <h2>{{ politico.nome }} ({{ politico.numero }})</h2>
+        <p>Partido: {{ politico.partido }} - Cargo: {{ politico.cargo }}</p>
+      </ion-label>
+      <ion-button fill="clear" (click)="editarPolitico(politico)">Editar</ion-button>
+    
+      <ion-button fill="clear" color="danger" (click)="excluirPolitico(politico.id ?? 0)">Excluir</ion-button>
+
+    </ion-item>
+  </ion-list>
+
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button (click)="adicionarPolitico()">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>
