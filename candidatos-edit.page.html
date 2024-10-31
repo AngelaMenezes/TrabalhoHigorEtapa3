@@ -1,0 +1,31 @@
+
+ 
+<ion-header>
+  <ion-toolbar>
+    <ion-title>{{ isEditMode ? 'Editar' : 'Cadastrar' }} Candidato</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item>
+    <ion-label position="floating">Nome</ion-label>
+    <ion-input [(ngModel)]="politico.nome"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">Número</ion-label>
+    <ion-input type="number" [(ngModel)]="politico.numero"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">Partido</ion-label>
+    <ion-input [(ngModel)]="politico.partido"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">Cargo</ion-label>
+    <ion-input [(ngModel)]="politico.cargo"></ion-input>
+  </ion-item>
+
+  <ion-button expand="full" (click)="salvarPolitico()">{{ isEditMode ? 'Salvar Alterações' : 'Adicionar Candidato' }}</ion-button>
+</ion-content>

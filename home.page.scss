@@ -1,20 +1,47 @@
-ion-content {
-  --background: #f4f4f4;
+.politicos-container {
+  display: flex;
+  flex-direction: column;
+  gap: 15px; 
+  padding: 20px;
 }
 
-ion-toolbar {
-  --background: #3880ff;
-  --color: white;
+ion-card {
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  background: rgba(255, 255, 255, 0.9); 
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
 }
 
-ion-title {
-  text-align: center;
+ion-card:hover {
+  transform: translateY(-5px); 
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
 }
 
-ion-list {
-  margin: 10px;
+ion-card-title {
+  font-size: 1.2em;
+  font-weight: bold;
+  color: #3b3b3b;
+}
+
+ion-card-subtitle {
+  font-size: 0.9em;
+  color: #888;
 }
 
 ion-button {
-  margin-left: 10px;
+  font-weight: bold;
+}
+
+ion-button[color="primary"] {
+  --background: #007BFF;
+  --background-hover: #0056b3;
+}
+
+ion-button[color="danger"] {
+  --background: #dc3545;
+  --background-hover: #c82333;
+}
+
+ion-toolbar{
+  --background: #0026ff;
 }

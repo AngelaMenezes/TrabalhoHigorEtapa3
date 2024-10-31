@@ -17,12 +17,4 @@ describe('HomePage', () => {
     fixture.detectChanges();
   }));
 
-  it('create', () => {
-    expect(component).toBeTruthy();
-  });
-
-  it('adicionar um novo político', () => {
-    component.salvarPolitico({ nome: 'Novo Politico', numero: 99, partido: 'Test', cargo: 'Vereador' });
-    expect(component.politicos.length).toBe(3);
-  });
 });

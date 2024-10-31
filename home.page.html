@@ -7,18 +7,25 @@
 </ion-header>
 
 <ion-content>
-  <ion-list>
-    <ion-item *ngFor="let politico of politicos">
-      <ion-label>
-        <h2>{{ politico.nome }} ({{ politico.numero }})</h2>
-        <p>Partido: {{ politico.partido }} - Cargo: {{ politico.cargo }}</p>
-      </ion-label>
-      <ion-button fill="clear" (click)="editarPolitico(politico)">Editar</ion-button>
-    
-      <ion-button fill="clear" color="danger" (click)="excluirPolitico(politico.id ?? 0)">Excluir</ion-button>
+  <div class="politicos-container">
+    <ion-card *ngFor="let politico of politicos">
+      <ion-card-header>
+        <ion-card-title>{{ politico.nome }} ({{ politico.numero }})</ion-card-title>
+        <ion-card-subtitle>Partido: {{ politico.partido }} - Cargo: {{ politico.cargo }}</ion-card-subtitle>
+      </ion-card-header>
 
-    </ion-item>
-  </ion-list>
+      <ion-card-content>
+        <ion-button fill="clear" (click)="editarPolitico(politico)" color="primary">
+          <ion-icon name="create-outline"></ion-icon> Editar
+        </ion-button>
+        <ion-button fill="clear" (click)="excluirPolitico(politico.id)" color="danger">
+          <ion-icon name="trash-outline"></ion-icon> Excluir
+        </ion-button>
+      </ion-card-content>
+    </ion-card>
+  </div>
+
+  
 
   <ion-fab vertical="bottom" horizontal="end" slot="fixed">
     <ion-fab-button (click)="adicionarPolitico()">
